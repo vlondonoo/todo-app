@@ -1,0 +1,157 @@
+<%- include("../layouts/header"); -%>
+
+<div class="col-lg-12 col-md-12">
+  <div class="card-header">
+    <h1>Create a ToDo</h1>
+    <div class="card-body">
+      <form action="/todos" method="post" enctype="multipart/form-data">
+        <div class="form-group row">
+          <label class="col-sm-4 col-form-label">Task Message</label>
+          <div class="col-sm-8">
+            <input
+              type="text"
+              class="form-control"
+              name="message"
+              placeholder="Task message"
+            />
+          </div>
+        </div>
+        <!--% if (feature.images) { %-->
+        <div class="form-group row">
+          <label class="col-sm-4 col-form-label"
+            >Task Image (only .jpg supported)</label
+          >
+          <div class="col-sm-8">
+            <input
+              id="image"
+              type="file"
+              name="filetoupload"
+              accept="image/*"
+            />
+          </div>
+        </div>
+        <!--% } %-->
+        <div class="form-group row">
+          <label class="col-sm-4 col-form-label">&nbsp;</label>
+          <div class="col-sm-8">
+            <button class="btn btn-primary btn-sm" type="submit">
+              Add Task
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<br /><br />
+
+<div class="col-lg-12 col-md-12">
+  <h1>
+    Pending Tasks
+    <!--% if (feature.orderByTitle) { %--><button
+      onclick="location.href='/todosOrdered';"
+      class="col-1"
+    >
+      <i class="fas fa-sort-alpha-down"></i></button
+    ><!--% } %-->
+  </h1>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Task</th>
+        <th scope="col">State</th>
+        <th scope="col">Date Created</th>
+        <!--% if (feature.images) { %-->
+        <th scope="col">Image</th>
+        <!--% } %-->
+        <th scope="col">Check</th>
+        <th scope="col">Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% for(var i=0; i < todos.length; i++) { %> <% if(todos[i].state ===
+      'OPEN') { %>
+      <tr>
+        <td><%= todos[i].id %></td>
+        <td><%= todos[i].message %></td>
+        <td><%= todos[i].state %></td>
+        <td><%= todos[i].createdAt %></td>
+        <!--% if (feature.images) { %-->
+        <td>
+          <% if(todos[i].image) { %>
+          <img src="/uploads/<%= todos[i].image%>" class="img-thumbnail" />
+          <% } %>
+        </td>
+        <!--% } %-->
+        <td>
+          <button
+            onclick="location.href='/todos/update/<%= todos[i].id %>/CLOSE';"
+          >
+            <i class="fas fa-check-circle"></i>
+          </button>
+        </td>
+        <td>
+          <button onclick="location.href='/todos/delete/<%= todos[i].id %>';">
+            <i class="fas fa-trash"></i>
+          </button>
+        </td>
+      </tr>
+      <% } %> <% } %>
+    </tbody>
+  </table>
+</div>
+
+<br /><br />
+
+<div class="col-lg-12 col-md-12">
+  <h1>Closed Tasks</h1>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Task</th>
+        <th scope="col">State</th>
+        <th scope="col">Date Created</th>
+        <!--% if (feature.images) { %-->
+        <th scope="col">Image</th>
+        <!--% } %-->
+        <th scope="col">Uncheck</th>
+        <th scope="col">Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% for(var i=0; i < todos.length; i++) { %> <% if(todos[i].state ===
+      'CLOSE') { %>
+      <tr>
+        <td><%= todos[i].id %></td>
+        <td><%= todos[i].message %></td>
+        <td><%= todos[i].state %></td>
+        <td><%= todos[i].createdAt %></td>
+        <!--% if (feature.images) { %-->
+        <td>
+          <% if(todos[i].image) { %>
+          <img src="/uploads/<%= todos[i].image%>" class="img-thumbnail" />
+          <% } %>
+        </td>
+        <!--% } %-->
+        <td>
+          <button
+            onclick="location.href='/todos/update/<%= todos[i].id %>/OPEN';"
+          >
+            <i class="fas fa-trash-restore"></i>
+          </button>
+        </td>
+        <td>
+          <button onclick="location.href='/todos/delete/<%= todos[i].id %>';">
+            <i class="fas fa-trash"></i>
+          </button>
+        </td>
+      </tr>
+      <% } %> <% } %>
+    </tbody>
+  </table>
+</div>
+
+<%- include("../layouts/footer"); -%>

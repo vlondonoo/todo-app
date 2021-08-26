@@ -1,0 +1,48 @@
+{
+  "author": "Álex Cortiñas",
+  "babel": {
+    "presets": [
+      "es2015",
+      "stage-0"
+    ]
+  },
+  "bin": {
+    "spl-js-engine": "./dist/index.js"
+  },
+  "dependencies": {
+    "istextorbinary": "5.7.0",
+    "jszip": "3.1.5",
+    "meow": "7.0.1",
+    "strip-bom": "4.0.0",
+    "xml-writer": "1.7.0",
+    "xmldoc": "0.5.1"
+  },
+  "description": "Software Product Line JavaScript Derivation Engine",
+  "devDependencies": {
+    "babel-cli": "6.26.0",
+    "babel-eslint": "6.0.2",
+    "babel-preset-es2015": "6.24.1",
+    "babel-preset-stage-0": "6.24.1",
+    "babel-register": "6.26.0",
+    "eslint": "2.7.0",
+    "mocha": "5.2.0",
+    "pretty-data": "0.40.0",
+    "watch": "1.0.2"
+  },
+  "homepage": "https://github.com/AlexCortinas/spl-js-engine",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "name": "spl-js-engine",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AlexCortinas/spl-js-engine.git"
+  },
+  "scripts": {
+    "build": "babel src --out-dir dist",
+    "eslint": "eslint src/** test/** || exit 0",
+    "prepublish": "npm run build",
+    "test": "mocha --ui qunit --compilers js:babel-register --require babel-polyfill",
+    "watch": "watch \"npm run build\" src"
+  },
+  "version": "3.0.3"
+}

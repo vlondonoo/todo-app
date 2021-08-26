@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<featureModel>
+  <struct>
+    <xor name="fm" mandatory="true" abstract="true">
+      <and name="a1">
+        <and name="b">
+          <feature name="c1"/>
+        </and>
+      </and>
+      <feature name="a2"/>
+    </xor>
+  </struct>
+  <constraints/>
+</featureModel>

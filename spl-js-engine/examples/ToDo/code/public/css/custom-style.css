@@ -1,0 +1,22 @@
+.font-bold {
+  font-weight: bold;
+}
+
+.font-300 {
+  font-weight: 200;
+}
+
+.errors li {
+  color: red;
+}
+
+.submit-delete {
+  border: 0;
+  background: none;
+}
+.btn {
+  min-height: 20px;
+}
+.img-thumbnail {
+  height: 80px;
+}

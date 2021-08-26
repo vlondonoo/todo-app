@@ -1,0 +1,32 @@
+{
+  "ignore": [
+    "target"    
+  ],
+  "delimiters": [
+    {
+      "extension": [
+        "html",
+        "jsp",
+        "xml",
+        "ejs"
+      ],
+      "start": "<!--%",
+      "end": "%-->"
+    },
+    {
+      "extension": [
+        "js",
+        "java"
+      ],
+      "start": "/*%",
+      "end": "%*/"
+    },
+    {
+      "extension": [
+        "py"
+      ],
+      "start": "#%",
+      "end": "%#"
+    }
+  ]
+}

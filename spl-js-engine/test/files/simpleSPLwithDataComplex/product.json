@@ -1,0 +1,18 @@
+{
+  "features": [
+    "featureA",
+    "featureC"
+  ],
+  "data": {
+    "aValue": "aaa",
+    "bValue": "bbb",
+    "more": {
+      "cValue": "ccc",
+      "dValue": "ddd",
+      "andmore": {
+        "eValue": "eee",
+        "fValue": "fff"
+      }
+    }
+  }
+}

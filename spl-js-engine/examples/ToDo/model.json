@@ -1,0 +1,21 @@
+{
+  "featureModel": {
+    "struct": {
+      "name": "ToDo",
+      "mandatory": true,
+      "abstract": true,
+      "type": "or",
+      "features": [
+        {
+          "name": "images",
+          "optional": true  
+        },
+        {
+          "name": "orderByTitle",
+          "optional": true
+        }
+      ]
+    },
+    "constraints": []
+  }
+}

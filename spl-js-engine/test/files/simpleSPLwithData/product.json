@@ -1,0 +1,10 @@
+{
+  "features": [
+    "featureA",
+    "featureC"
+  ],
+  "data": {
+    "aValue": "hello!",
+    "bValue": "bye!"
+  }
+}

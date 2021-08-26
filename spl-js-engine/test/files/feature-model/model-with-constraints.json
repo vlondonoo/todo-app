@@ -1,0 +1,113 @@
+{
+    "featureModel": {
+        "struct": {
+            "name": "MyCalculator",
+            "mandatory": true,
+            "abstract": true,
+            "type": "and",
+            "features": [{
+                "name": "Base",
+                "mandatory": true,
+                "type": "and",
+                "features": [{
+                    "name": "Operations",
+                    "abstract": true,
+                    "type": "or",
+                    "features": [{
+                        "name": "Add"
+                    }, {
+                        "name": "Subtract"
+                    }, {
+                        "name": "Multiply"
+                    }, {
+                        "name": "Divide"
+                    }]
+                }, {
+                    "name": "Capabilities",
+                    "abstract": true,
+                    "type": "or",
+                    "features": [{
+                        "name": "Decimal"
+                    }]
+                }]
+            }]
+        },
+        "constraints": [{
+            "type": "or",
+            "first": {
+                "type": "feature",
+                "feature": "Add"
+            },
+            "second": {
+                "type": "feature",
+                "feature": "Multiply"
+            }
+        }, {
+            "type": "not",
+            "constraint": {
+                "type": "feature",
+                "feature": "Add"
+            }
+        }, {
+            "type": "or",
+            "first": {
+                "type": "not",
+                "constraint": {
+                    "type": "feature",
+                    "feature": "Add"
+                }
+            },
+            "second": {
+                "type": "feature",
+                "feature": "Capabilities"
+            }
+        }, {
+            "type": "and",
+            "first": {
+                "type": "feature",
+                "feature": "Capabilities"
+            },
+            "second": {
+                "type": "feature",
+                "feature": "Add"
+            }
+        }, {
+            "type": "implies",
+            "first": {
+                "type": "feature",
+                "feature": "Multiply"
+            },
+            "second": {
+                "type": "feature",
+                "feature": "Base"
+            }
+        }, {
+            "type": "iff",
+            "first": {
+                "type": "feature",
+                "feature": "Capabilities"
+            },
+            "second": {
+                "type": "feature",
+                "feature": "Decimal"
+            }
+        }, {
+            "type": "implies",
+            "first": {
+                "type": "implies",
+                "first": {
+                    "type": "feature",
+                    "feature": "Decimal"
+                },
+                "second": {
+                    "type": "feature",
+                    "feature": "Base"
+                }
+            },
+            "second": {
+                "type": "feature",
+                "feature": "Divide"
+            }
+        }]
+    }
+}

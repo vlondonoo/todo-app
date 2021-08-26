@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<featureModel>
+    <struct>
+        <and name="MyCalculator" mandatory="true" abstract="true">
+            <and name="Base" mandatory="true">
+                <or name="Operations" abstract="true">
+                    <feature name="Add"/>
+                    <feature name="Subtract"/>
+                    <feature name="Multiply"/>
+                    <feature name="Divide"/>
+                </or>
+                <or name="Capabilities" abstract="true">
+                    <feature name="Decimal"/>
+                </or>
+            </and>
+        </and>
+    </struct>
+    <constraints/>
+</featureModel>

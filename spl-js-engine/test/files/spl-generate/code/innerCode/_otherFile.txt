@@ -1,0 +1,2 @@
+/*%@ return data.list.map(function(r) { return { fileName: r + '.txt', context: r }; }) %*/
+/*%= context %*/

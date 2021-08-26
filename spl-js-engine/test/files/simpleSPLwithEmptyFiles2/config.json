@@ -1,0 +1,12 @@
+{
+  "ignore": null,
+  "delimiters": [
+    {
+      "extension": [
+        "md"
+      ],
+      "start": "/*%",
+      "end": "%*/"
+    }
+  ]
+}

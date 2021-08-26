@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+    <featureModel chosenLayoutAlgorithm="1">
+        <struct>
+            <and abstract="true" mandatory="true" name="MyCalculator">
+                <and mandatory="true" name="Base">
+                    <or abstract="true" name="Operations">
+                        <feature mandatory="true" name="Add"/>
+                        <feature mandatory="true" name="Subtract"/>
+                        <feature mandatory="true" name="Multiply"/>
+                        <feature mandatory="true" name="Divide"/>
+                    </or>
+                    <or abstract="true" name="Capabilities">
+                        <feature mandatory="true" name="Decimal"/>
+                    </or>
+                </and>
+            </and>
+        </struct>
+        <constraints/>
+        <calculations Auto="true" Constraints="true" Features="true" Redundant="true" Tautology="true"/>
+        <comments/>
+        <featureOrder userDefined="false"/>
+    </featureModel>

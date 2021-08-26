@@ -1,0 +1,15 @@
+{
+  "ignore": [
+    "target",
+    "bower_components"
+  ],
+  "delimiters": [
+    {
+      "extension": [
+        "html"
+      ],
+      "start": "<!--%",
+      "end": "-->"
+    }
+  ]
+}
