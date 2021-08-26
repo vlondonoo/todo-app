@@ -1,4 +1,5 @@
 # spl-js-engine
+https://github.com/AlexCortinas/spl-js-engine
 
 Software Product Line JavaScript Derivation Engine
 
@@ -45,30 +46,5 @@ Running the generated product:
 cd output
 npm install
 mvn spring-boot:run
-#CUSTOM PORT
-#mvn spring-boot:run -Drun.arguments="--server.port=8181"
 
-#use new dependecies
-#          <dependency>
-#             <groupId>javax.xml.bind</groupId>
-#             <artifactId>jaxb-api</artifactId>
-#             <version>2.3.0</version>
-#         </dependency>
-#         <dependency>
-#             <groupId>com.sun.xml.bind</groupId>
-#             <artifactId>jaxb-impl</artifactId>
-#             <version>2.3.0</version>
-#         </dependency>
-#         <dependency>
-#             <groupId>com.sun.xml.bind</groupId>
-#             <artifactId>jaxb-core</artifactId>
-#             <version>2.3.0</version>
-#         </dependency>
-#         <dependency>
-#             <groupId>javax.activation</groupId>
-#             <artifactId>activation</artifactId>
-#             <version>1.1.1</version>
-#         </dependency>
 
-# open http://localhost:8080/ on any web browser
-```
