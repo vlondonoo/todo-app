@@ -16,7 +16,8 @@
     {
       "extension": [
         "js",
-        "java"
+        "java",
+        "json"
       ],
       "start": "/*%",
       "end": "%*/"

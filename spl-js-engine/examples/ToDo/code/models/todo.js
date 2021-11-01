@@ -8,6 +8,6 @@ module.exports = (sequelize, type) => {
     },
     message: type.STRING,
     state: type.STRING,
-    /* if (feature.images) image: type.STRING*/
+    /*% if (feature.images){ %*/ image: type.STRING/*% } %*/
   })
 }
